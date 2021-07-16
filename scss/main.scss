@@ -1,0 +1,49 @@
+// import file into main.scss from others file
+@import "./reset";
+@import "./variable";
+@import "./mixin";
+
+//function scss(){
+// @retun }
+
+@function fontWeight($name) {
+  @return map-get($font-weights, $name);
+}
+
+body {
+  background: $bgColor;
+  color: $primaryColor;
+  @include theme($light-theme: false);
+}
+.header {
+  @include flexCenter(row);
+  font-size: 10px;
+  width: 90% - 30%; // in css để thực hiện operator thì dùng calc() tuy nhiên ở scss thì không cần
+  margin: 0 auto;
+  // .header .header__para
+  #{&}__para1 {
+    //c1
+    // font-weight: map-get($map: $font-weights, $key: bold);
+    //c2
+    font-weight: fontWeight(bold);
+    padding: 10px;
+
+    &:hover {
+      color: black;
+    }
+  }
+  //.header__para
+  //   &__para {
+  //     font-size: 50px;
+  //   }
+  #{&}__para2 {
+    // @extend: kế thừa thuộc tính css của para1
+    @extend .header__para1;
+    &:hover {
+      color: white;
+    }
+  }
+  @include mobile() {
+    flex-direction: column;
+  }
+}

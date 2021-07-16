@@ -1,0 +1,21 @@
+//mixin () -> to use it -> @include
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten($color: #000000, $amount: 20%);
+    color: white;
+  }
+  //method lighten used to set color with variable $amount use set độ sáng
+}
+
+@mixin mobile() {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

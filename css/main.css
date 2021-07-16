@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: lime;
+  color: red;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+.header .header__para1, .header .header__para2 {
+  font-weight: 700;
+  padding: 10px;
+}
+.header .header__para1:hover, .header .header__para2:hover {
+  color: black;
+}
+.header .header__para2:hover {
+  color: white;
+}
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
